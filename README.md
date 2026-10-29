@@ -24,9 +24,17 @@ These are the main roles of the tables we will be using:
 - **Deliveries** (Livrari_v): Manages order logistics by storing delivery addresses, current statuses, and delivery dates.   
 - **Recipes** (Retete_v) & **Recipe Components** (Produse_retete_v): Details preparation times and maps specific recipes to their final products.
 
-# Database Setup & Deployment
+# Database Setup
 To deploy this database locally, execute the scripts in the [schema/](schema) directory in the following order:
-- tables_creation.sql: Defines the base 3NF relational structures.   
-- alter_tables.sql: Applies structural modifications and schema updates.   
-- constraints.sql: Enforces primary keys, foreign keys, and data integrity rules.   
-- data_insertion.sql: Populates the tables with sample transactional records for testing.
+1. **tables_creation.sql**: Defines the base 3NF relational structures.   
+2. **alter_tables.sql**: Applies structural modifications and schema updates.   
+3. **constraints.sql**: Enforces primary keys, foreign keys, and data integrity rules.
+4. **db_objects_setup.sql**: Defines auto-incrementing sequences, creates indexes for faster lookups, and establishes reporting views.
+5. **data_insertion.sql**: Populates the tables with sample transactional records for testing.
+
+# Business Intelligence & Analytics
+The [business_intelligence/](business_intelligence) directory contains business-focused SQL scripts categorized by domain. These scripts demonstrate data extraction, transformation, and aggregation to drive business decisions.
+- **customer_analytics.sql**: Analyzes customer demographics and loyalty program metrics.
+- **sales_and_inventory.sql**: Tracks order values, product profitability, and recipe preparation times.
+- **hr_and_operations.sql**: Manages employee roles, salary adjustments, and staff performance metrics.
+- **analytical_reports.sql**: Advanced window functions for time-series analysis and ranked reporting.
